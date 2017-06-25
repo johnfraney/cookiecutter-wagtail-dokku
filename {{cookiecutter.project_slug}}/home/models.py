@@ -36,7 +36,6 @@ class StandardPage(Page):
     content_panels = Page.content_panels + [
         ImageChooserPanel('feature_image'),
         FieldPanel('feature_image_large'),
-        FieldPanel('feature_text'),
         StreamFieldPanel('body'),
     ]
 
