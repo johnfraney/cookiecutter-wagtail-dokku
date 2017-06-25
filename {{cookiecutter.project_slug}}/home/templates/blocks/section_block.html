@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+{% with bg=value.background_colour %}
+<section class="
+    {% if bg == 'dark' %}bg-inverse text-white{% elif bg == 'faded' %}bg-faded{% endif %}
+    {% if value.margins == 'small'%} section-sm{% elif value.margins == 'flush' %} section-flush{% endif %}
+  ">
+  <div class="container">
+    {{ value.content|richtext }}
+    <div class="clearfix"></div>
+  </div>
+</section>
+{% endwith %}

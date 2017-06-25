@@ -1,0 +1,10 @@
+{% load wagtailimages_tags %}
+
+<div class="row">
+  <div class="col-sm-6">
+    {% image value.image height-400 class="img-responsive text-center" %}
+  </div>
+  <div class="col-sm-6">
+    {{ value.text }}
+  </div>
+</div>

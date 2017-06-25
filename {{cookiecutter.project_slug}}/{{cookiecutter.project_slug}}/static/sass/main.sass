@@ -1,0 +1,27 @@
+// Include colours & Bootstrap tweaks before Bootstrap
+@import 'bootstrap_customizations'
+
+// Project-specific SASS files
+@import 'navbar'
+@import 'section'
+@import 'feature_image'
+@import 'blocks'
+
+// One-off customizations (should probably be in separate SASS files)
+html, body
+  font-family: Overpass, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+  font-size: 15pt
+  overflow-x: hidden
+  width: 100%
+
+// Include a larger breakpoint to make better use of wide screens
+.container
+  @media(min-width: 1500px)
+    width: 1420px
+    max-width: 100%
+
+.btn-yellow
+  background-color: #fc0
+
+.full-width
+  width: 100%

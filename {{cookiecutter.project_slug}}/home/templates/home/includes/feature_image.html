@@ -1,0 +1,12 @@
+{% load cache responsive_image wagtailimages_tags %}
+<div class="feature-wrapper js-feature-wrapper">
+  {% block feature %}
+    <div class="feature-visual">
+      {% if page.feature_image_large %}
+        {% responsiveimage page.feature_image max-1900x560 srcset="fill-1500x560 1500w, fill-1000x560 1000w, fill-500x560 500w" width="" height="" %}
+      {% else %}
+        {% responsiveimage page.feature_image max-1900x280 srcset="fill-1500x560 1500w, fill-1000x280 1000w, fill-500x280 500w" width="" height="" %}
+      {% endif %}
+    </div>
+  {% endblock feature %}
+</div>

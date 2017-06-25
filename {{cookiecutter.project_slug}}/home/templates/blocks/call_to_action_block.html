@@ -1,0 +1,12 @@
+{% load wagtailcore_tags %}
+<section class="bg-{{ value.background_colour }} text-white section-sm">
+  <div class="container">
+    {{ value.content|richtext }}
+    <div class="text-center">
+      <a class="btn btn-lg btn-{{ value.button_colour }} {% if value.button_colour != 'secondary' %}text-white {% endif %}"
+        href="{{ value.url }}">
+        {{ value.link_text }}
+      </a>
+    </div>
+  </div>
+</section>

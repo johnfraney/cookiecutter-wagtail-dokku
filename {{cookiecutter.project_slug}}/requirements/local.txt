@@ -1,0 +1,5 @@
+# Local development dependencies go here.
+-r test.txt
+
+pytest-testmon==0.9.5
+django-debug-toolbar==1.8

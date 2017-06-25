@@ -1,0 +1,29 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "{{ cookiecutter.version }}",
+  "description": "{{ cookiecutter.description }}",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp styles scripts imgCompression"
+  },
+  "author": "{{ cookiecutter.author_name }}",
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-pixrem": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "loadtest": "^2.3.0",
+    "run-sequence": "^1.2.2"
+  }
+}

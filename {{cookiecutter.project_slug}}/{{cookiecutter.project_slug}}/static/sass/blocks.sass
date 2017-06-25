@@ -1,0 +1,21 @@
+/* Ensure the last item has no bottom margin for even spacing */
+.block-section .rich-text > :last-child
+  margin-bottom: 0
+
+.richtext-image
+  max-width: 100%
+  height: auto
+
+  @media(min-width: 577px)
+    max-width: 50%
+
+  &.left
+    float: left
+    margin-right: 2rem
+
+  &.right
+    float: right
+    margin-left: 2rem
+
+  @media(max-width: 576px)
+    margin-bottom: 1em

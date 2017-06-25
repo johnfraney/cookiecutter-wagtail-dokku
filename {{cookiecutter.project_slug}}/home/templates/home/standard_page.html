@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}{% if page.feature_image %}feature{% endif %} {% if page.feature_image_large %}feature-lg{% endif %}{% endblock %}
+
+{% block content %}
+  {% include_block page.body %}
+{% endblock %}

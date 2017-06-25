@@ -1,0 +1,26 @@
+# Core project requirements.
+Django>=1.11,<1.12
+wagtail>=1.10,<1.11
+wagtailmenus==2.2.2
+
+# Devops
+django-environ==0.4.3
+django-redis==4.8.0
+psycopg2==2.7.1
+waitress==1.0.2
+
+# For a nicer Python shell
+ipython==6.1.0
+
+# Mail sending
+django-anymail==0.10
+
+# Email-only user model
+django-custom-user==0.7
+
+# Caching
+django-cachalot==1.5.0
+
+# Other requirements
+django-bootstrap3==8.2.3
+django-npm==1.0.0
