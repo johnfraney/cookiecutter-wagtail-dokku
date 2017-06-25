@@ -1,4 +1,4 @@
-{% raw %}{% load cache menu_tags static wagtailuserbar %}
+{% load cache menu_tags static wagtailuserbar %}
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -38,9 +38,9 @@
           data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/">{% endraw %}
-          {{ cookiecutter.project_name }}
-          {% raw %}</a>
+        <a class="navbar-brand" href="/">
+          Home
+        </a>
         <div class="collapse navbar-collapse" id="mainMenu">
           {% main_menu %}
         </div>
@@ -72,4 +72,4 @@
     {# Override this in templates to add extra javascript #}
     {% endblock %}
   </body>
-</html>{% endraw %}
+</html>
