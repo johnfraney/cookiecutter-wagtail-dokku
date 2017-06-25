@@ -1,4 +1,4 @@
-from django import template
+{% raw %}from django import template
 from wagtail.wagtailimages.models import SourceImageIOError
 from wagtail.wagtailimages.templatetags.wagtailimages_tags import ImageNode
 
@@ -129,3 +129,4 @@ class ResponsiveImageNode(ImageNode, template.Node):
                     resolved_attrs[key] = self.attrs[key]
 
             return rendition.img_tag(resolved_attrs)
+{% endraw %}
