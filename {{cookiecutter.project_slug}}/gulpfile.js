@@ -27,7 +27,6 @@ var pathsConfig = function (appName) {
 
   return {
     app: this.app,
-    templates: this.app + '/templates',
     css: this.app + '/static/css',
     sass: this.app + '/static/sass',
     fonts: this.app + '/static/fonts',
@@ -44,7 +43,7 @@ var paths = pathsConfig();
 
 // Styles autoprefixing and minification
 gulp.task('styles', function() {
-  return gulp.src(paths.sass + '/main.sass')
+  return gulp.src([paths.sass + '/main.sass', paths.sass + '/below_the_fold.sass'])
     .pipe(sass().on('error', sass.logError))
     .pipe(plumber()) // Checks for errors
     .pipe(autoprefixer({browsers: ['last 2 versions']})) // Adds vendor prefixes
@@ -92,12 +91,10 @@ gulp.task('browserSync', function() {
 
 // Watch
 gulp.task('watch', function() {
-
+  runSequence(['styles', 'scripts', 'imgCompression']);
   gulp.watch(paths.sass + '/*.sass', ['styles']);
   gulp.watch(paths.js + '/*.js', ['scripts']).on('change', reload);
   gulp.watch(paths.images + '/*', ['imgCompression']);
-  gulp.watch(paths.templates + '/**/*.html').on('change', reload);
-
 });
 
 // Default task
