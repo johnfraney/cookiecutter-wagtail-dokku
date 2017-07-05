@@ -8,7 +8,8 @@
   },
   "author": "{{ cookiecutter.author_name }}",
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6"
+    "bootstrap": "4.0.0-alpha.6",
+    "typeface-overpass": "^0.0.29"
   },
   "devDependencies": {
     "browser-sync": "^2.18.12",

@@ -22,7 +22,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     {# Global stylesheets #}
-    <link rel="stylesheet" href="{% static 'css/main.min.css' %}"/>
+    {% cache 1000 styles %}
+    <style>
+      {% include 'main.min.css' %}
+    </style>
+    {% endcache %}
 
     {% block extra_css %}
     {# Override this in templates to add extra stylesheets #}
@@ -48,20 +52,31 @@
     </nav>
     {% endcache %}
 
-    {% if page.feature_image %}
-      {% include 'home/includes/feature_image.html' %}
-    {% endif %}
+    {% cache 1000 content page.url %}
+      {% if page.feature_image %}
+        {% include 'home/includes/feature_image.html' %}
+      {% endif %}
 
-    {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+    {% endcache %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <noscript id="deferred-styles">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/below_the_fold.min.css' %}"/>
+    </noscript>
     <script>
-      WebFont.load({
-        google: {
-          families: ['Overpass:400']
-        }
-      });
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
     </script>
+
     <script async src="{% static 'jquery/dist/jquery.slim.min.js' %}"></script>
     <script async src="{% static 'tether/dist/js/tether.min.js' %}"></script>
     <script async src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>

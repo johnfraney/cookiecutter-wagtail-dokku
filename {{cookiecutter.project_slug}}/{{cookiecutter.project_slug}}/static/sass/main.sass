@@ -1,11 +1,16 @@
 // Include colours & Bootstrap tweaks before Bootstrap
 @import 'bootstrap_customizations'
+@import 'bootstrap_above_the_fold'
 
 // Project-specific SASS files
 @import 'navbar'
 @import 'section'
 @import 'feature_image'
 @import 'blocks'
+@import 'fontface'
+
+@include font-face('Overpass', 'static/fonts/overpass-latin-400', 400, normal, eot woff2 woff)
+@include font-face('Overpass', 'static/fonts/overpass-latin-600', 600, normal, eot woff2 woff)
 
 // One-off customizations (should probably be in separate SASS files)
 html, body
@@ -19,9 +24,6 @@ html, body
   @media(min-width: 1500px)
     width: 1420px
     max-width: 100%
-
-.btn-yellow
-  background-color: #fc0
 
 .full-width
   width: 100%
